@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b5e55">
+<meta name="description" content="Cuencada 2026 — reunión familiar en Mérida, Yucatán. Programa, mapas, fotos, videos y actividades.">
+<title>CUENCADA 2026 · Mérida</title>
+<style>
+:root{
+  --green:#0b5e55;--green2:#087f6d;--cream:#fffaf0;--gold:#e7b84b;
+  --ink:#17332f;--muted:#60736f;--white:#fff;--shadow:0 12px 35px rgba(19,55,49,.12);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5}
+a{text-decoration:none;color:inherit}
+.hero{min-height:92vh;padding:22px 20px 55px;display:flex;flex-direction:column;justify-content:space-between;
+background:linear-gradient(135deg,rgba(7,76,69,.96),rgba(8,127,109,.88)),radial-gradient(circle at 85% 15%,#e7b84b55,transparent 30%)}
+.nav{max-width:1100px;width:100%;margin:auto;display:flex;align-items:center;justify-content:space-between;color:white}
+.logo{font-weight:900;letter-spacing:.12em;font-size:20px}.nav a{margin-left:18px;font-size:14px;font-weight:700}
+.hero-content{max-width:1100px;width:100%;margin:0 auto;color:white;padding:55px 0 15px}
+.kicker{font-weight:800;letter-spacing:.18em;color:#ffe39a;font-size:14px}
+h1{font-size:clamp(54px,11vw,118px);line-height:.9;margin:14px 0 20px;letter-spacing:-.06em}
+.hero h2{font-size:clamp(20px,3vw,34px);margin:0 0 18px}.hero p{font-size:18px;max-width:700px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:999px;font-weight:800;border:2px solid transparent;cursor:pointer}
+.btn.primary{background:var(--gold);color:#183b35}.btn.light{background:white;color:var(--green)}.btn.ghost{border-color:#ffffff88;color:white}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:600px;margin-top:30px}
+.countdown div{background:#ffffff16;border:1px solid #ffffff30;border-radius:18px;padding:12px;text-align:center}
+.countdown b{display:block;font-size:27px}.countdown span{font-size:11px;text-transform:uppercase;opacity:.8}
+section{max-width:1100px;margin:auto;padding:75px 20px}.section-title{font-size:38px;line-height:1.05;margin:0 0 12px}.intro{color:var(--muted);max-width:720px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.card{background:white;border-radius:24px;padding:24px;box-shadow:var(--shadow);border:1px solid #e7eee9}
+.card .icon{font-size:34px}.card h3{margin:10px 0 7px;font-size:21px}.card p{margin:0;color:var(--muted)}
+.day{display:grid;grid-template-columns:110px 1fr;gap:24px;background:white;border-radius:24px;padding:24px;margin:14px 0;box-shadow:var(--shadow)}
+.date{font-weight:900;color:var(--green);font-size:20px}.date span{display:block;font-size:13px;color:var(--muted);text-transform:uppercase}
+.timeline h3{margin:0 0 7px}.timeline p{margin:0;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.tag{background:#eef7f3;color:var(--green);padding:7px 10px;border-radius:999px;font-size:12px;font-weight:800}
+.upload{background:linear-gradient(135deg,#0b5e55,#087f6d);color:white;border-radius:30px;padding:38px;display:grid;grid-template-columns:1.3fr .7fr;gap:25px;align-items:center;box-shadow:var(--shadow)}
+.upload h2{font-size:38px;margin:0 0 10px}.upload p{opacity:.9}
+.upload .btn{background:var(--gold);color:#17332f}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:25px}
+.photo{aspect-ratio:1;border-radius:18px;background:linear-gradient(135deg,#dfece7,#f6df9b);display:flex;align-items:center;justify-content:center;font-size:30px}
+.mapgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:25px}
+.mapcard{background:white;padding:24px;border-radius:22px;box-shadow:var(--shadow)}
+.mapcard a{display:inline-block;margin-top:12px;color:var(--green);font-weight:900}
+footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small{font-size:13px;opacity:.75}
+.modal{position:fixed;inset:0;background:#0008;display:none;align-items:center;justify-content:center;padding:20px;z-index:20}
+.modal.open{display:flex}.modalbox{max-width:650px;background:white;border-radius:26px;padding:28px;max-height:90vh;overflow:auto}.close{float:right;border:0;background:#eee;border-radius:50%;width:36px;height:36px;font-size:20px;cursor:pointer}
+@media(max-width:760px){
+ .nav a{display:none}.grid,.mapgrid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}
+ .day{grid-template-columns:1fr;gap:8px}.upload{grid-template-columns:1fr;padding:28px}.countdown{grid-template-columns:repeat(2,1fr)}
+ section{padding:55px 16px}.hero{padding-left:16px;padding-right:16px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero" id="inicio">
+  <nav class="nav">
+    <div class="logo">CUENCADA 2026</div>
+    <div><a href="#programa">Programa</a><a href="#fotos">Fotos</a><a href="#mapa">Mapa</a><a href="#familia">Familia</a></div>
+  </nav>
+  <div class="hero-content">
+    <div class="kicker">MÉRIDA · YUCATÁN · 13—18 SEPTIEMBRE 2026</div>
+    <h1>CUENCADA</h1>
+    <h2>Una familia. Una historia. Una celebración.</h2>
+    <p>Bienvenidos al portal oficial de nuestra reunión familiar. Aquí encontrarás el programa, actividades, ubicaciones y el álbum vivo de todos los momentos que compartamos en Mérida.</p>
+    <div class="actions">
+      <a class="btn primary" href="#programa">📅 Ver programa</a>
+      <a class="btn light" id="uploadTop" href="#fotos">📸 Subir fotos</a>
+      <a class="btn ghost" href="#mapa">🗺️ Ver lugares</a>
+    </div>
+    <div class="countdown" aria-label="Cuenta regresiva">
+      <div><b id="days">—</b><span>días</span></div><div><b id="hours">—</b><span>horas</span></div>
+      <div><b id="mins">—</b><span>minutos</span></div><div><b id="secs">—</b><span>segundos</span></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <h2 class="section-title">Todo en un solo lugar</h2>
+  <p class="intro">La página está pensada primero para celular: durante la Cuencada podrás consultar rápidamente qué sigue, llegar a cada lugar y compartir tus fotografías y videos.</p>
+  <div class="grid">
+    <a class="card" href="#programa"><div class="icon">📅</div><h3>Programa</h3><p>Consulta cada día, horarios y actividades.</p></a>
+    <a class="card" href="#fotos"><div class="icon">📸</div><h3>Álbum vivo</h3><p>Comparte y consulta las fotos de la familia.</p></a>
+    <a class="card" href="#mapa"><div class="icon">🗺️</div><h3>¿Dónde estamos?</h3><p>Accesos rápidos a hoteles y lugares del recorrido.</p></a>
+    <a class="card" href="#familia"><div class="icon">❤️</div><h3>Nuestra familia</h3><p>Historias, recuerdos y genealogía familiar.</p></a>
+    <a class="card" href="#extras"><div class="icon">⭐</div><h3>Actividades extras</h3><p>Ideas para aprovechar el tiempo libre en Mérida.</p></a>
+    <a class="card" href="#tips"><div class="icon">🎒</div><h3>Tips Cuencada</h3><p>Qué llevar y recomendaciones prácticas.</p></a>
+  </div>
+</section>
+
+<section id="programa">
+  <h2 class="section-title">📅 Programa Cuencada 2026</h2>
+  <p class="intro">Del domingo 13 al viernes 18 de septiembre.</p>
+
+  <div class="timeline">
+    <article class="day"><div class="date">13<span>Domingo</span></div><div><h3>🌴 Llegada a Mérida</h3><p>Check-in en Hotel Chariot o Hotel El Conquistador. Transporte de aeropuerto no incluido.</p><div class="tags"><span class="tag">7:30 PM · Lobby Chariot</span><span class="tag">🚶 Centro de Mérida</span><span class="tag">📸 Fotos</span></div></div></article>
+    <article class="day"><div class="date">14<span>Lunes</span></div><div><h3>💦 Cenote & Izamal</h3><p><b>$1,000 p/p</b> · 7:40 AM reunión · 8:00 AM salida puntual · 9:00 AM Cenote Santa Bárbara · 1:00 PM comida yucateca · 3:00 PM Izamal · 6:00 PM hotel.</p><div class="tags"><span class="tag">🚌 Transporte incluido</span><span class="tag">💦 Cenote</span><span class="tag">💛 Izamal</span></div></div></article>
+    <article class="day"><div class="date">15<span>Martes</span></div><div><h3>🇲🇽 Uxmal + CUENCADA FEST</h3><p>Visita matutina a Uxmal. Por la noche: cena, música, baile, taquiza, DJ, mariachi y celebración mexicana.</p><div class="tags"><span class="tag">🌴 Uxmal</span><span class="tag">🌮 Taquiza</span><span class="tag">🎺 Mariachi</span><span class="tag">🎉 Grito</span></div></div></article>
+    <article class="day"><div class="date">16<span>Miércoles</span></div><div><h3>🌊 Chuburná · Isla Columpios · Progreso</h3><p>Salida a Chuburná e Isla Columpios. Después, Progreso y recorrido por el malecón. <b>7:00 PM atardecer · 8:00 PM regreso al hotel.</b></p><div class="tags"><span class="tag">🏝️ Chuburná</span><span class="tag">🛟 Isla Columpios</span><span class="tag">🌅 Puesta del sol</span></div></div></article>
+    <article class="day"><div class="date">17<span>Jueves</span></div><div><h3>🛍️ Día libre</h3><p>Compras, Centro Histórico de Mérida, restaurantes y actividades extras.</p><div class="tags"><span class="tag">🛍️ Compras</span><span class="tag">📍 Centro</span><span class="tag">⭐ Extras</span></div></div></article>
+    <article class="day"><div class="date">18<span>Viernes</span></div><div><h3>❤️ Despedida</h3><p>Tiempo libre para quienes permanezcan más tiempo en Mérida.</p></div></article>
+  </div>
+</section>
+
+<section id="fotos">
+  <div class="upload">
+    <div>
+      <div class="kicker">ÁLBUM VIVO</div>
+      <h2>📸 ¡Sube tus fotos y videos!</h2>
+      <p>Comparte los momentos de la Cuencada con toda la familia. El botón de abajo puede enlazarse a una carpeta de OneDrive configurada para recibir archivos.</p>
+      <div class="actions">
+        <a class="btn" id="uploadBtn" href="#">📤 SUBIR FOTOS Y VIDEOS</a>
+        <a class="btn ghost" id="galleryBtn" href="#">👀 VER ÁLBUM</a>
+      </div>
+    </div>
+    <div><div class="card" style="color:var(--ink);"><b>💡 Consejo</b><p style="margin-top:7px">Al configurar OneDrive, crea carpetas por día: 13, 14, 15, 16, 17 y 18 de septiembre.</p></div></div>
+  </div>
+  <div class="gallery">
+    <div class="photo">📸</div><div class="photo">🌴</div><div class="photo">💦</div><div class="photo">🇲🇽</div>
+  </div>
+</section>
+
+<section id="mapa">
+  <h2 class="section-title">🗺️ Lugares principales</h2>
+  <div class="mapgrid">
+    <div class="mapcard"><h3>🏨 Hotel Chariot Mérida</h3><p>Uno de los hoteles base de la Cuencada.</p><a target="_blank" rel="noopener" href="https://www.hotelchariotmerida.com/">Abrir sitio del hotel →</a></div>
+    <div class="mapcard"><h3>🏨 Hotel El Conquistador</h3><p>Segundo hotel considerado para la familia.</p><a target="_blank" rel="noopener" href="https://www.elconquistador.com.mx/">Abrir sitio del hotel →</a></div>
+    <div class="mapcard"><h3>💦 Cenote Santa Bárbara</h3><p>Actividad del lunes 14.</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Cenotes+Santa+Barbara+Homun+Yucatan">Abrir en Google Maps →</a></div>
+    <div class="mapcard"><h3>💛 Izamal</h3><p>Pueblo Mágico amarillo.</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Izamal+Yucatan">Abrir en Google Maps →</a></div>
+    <div class="mapcard"><h3>🌴 Uxmal</h3><p>Visita del martes 15.</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Uxmal+Yucatan">Abrir en Google Maps →</a></div>
+    <div class="mapcard"><h3>🌊 Progreso</h3><p>Malecón y atardecer del miércoles 16.</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Progreso+Yucatan">Abrir en Google Maps →</a></div>
+  </div>
+</section>
+
+<section id="familia">
+  <h2 class="section-title">❤️ Nuestra familia</h2>
+  <p class="intro">La Cuencada también es una oportunidad para conservar nuestra historia. Esta sección puede crecer con fotografías antiguas, árbol genealógico, historias familiares y recuerdos.</p>
+  <div class="grid">
+    <div class="card"><div class="icon">🌳</div><h3>Árbol familiar</h3><p>Espacio para integrar generaciones y parentescos.</p></div>
+    <div class="card"><div class="icon">📜</div><h3>Nuestra historia</h3><p>Relatos y documentos que ayuden a preservar nuestra memoria.</p></div>
+    <div class="card"><div class="icon">🖼️</div><h3>Fotos antiguas</h3><p>Un álbum especial para las imágenes de nuestros padres y abuelos.</p></div>
+  </div>
+</section>
+
+<section id="extras">
+  <h2 class="section-title">⭐ Actividades extras</h2>
+  <div class="grid">
+    <div class="card"><h3>🏛️ Centro Histórico</h3><p>Plaza Grande, Catedral, Paseo de Montejo y calles del centro.</p></div>
+    <div class="card"><h3>🍴 Gastronomía</h3><p>Descubre cochinita, sopa de lima, papadzules y otras especialidades yucatecas.</p></div>
+    <div class="card"><h3>🛍️ Compras</h3><p>Artesanías, textiles, recuerdos y productos locales.</p></div>
+  </div>
+</section>
+
+<section id="tips">
+  <h2 class="section-title">🎒 Tips Cuencada</h2>
+  <div class="grid">
+    <div class="card"><h3>☀️ Para el calor</h3><p>Protector solar, sombrero/gorra y agua.</p></div>
+    <div class="card"><h3>💦 Para cenotes y playa</h3><p>Traje de baño y una toalla pequeña.</p></div>
+    <div class="card"><h3>👟 Para caminar</h3><p>Calzado cómodo para Mérida, Izamal y las visitas arqueológicas.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="card" style="text-align:center;padding:38px">
+    <h2 class="section-title">🇲🇽 ¡Nos vemos en Mérida!</h2>
+    <p class="intro" style="margin:0 auto">Que esta Cuencada 2026 se convierta en otro capítulo de nuestra historia familiar.</p>
+    <div class="actions" style="justify-content:center"><a class="btn primary" href="#inicio">↑ Volver arriba</a></div>
+  </div>
+</section>
+
+<footer>
+  <strong>CUENCADA 2026 · MÉRIDA, YUCATÁN</strong>
+  <p class="small">Portal familiar · 13—18 septiembre 2026</p>
+</footer>
+
+<div class="modal" id="modal">
+ <div class="modalbox">
+  <button class="close" onclick="closeModal()">×</button>
+  <h2>📸 Comparte tus recuerdos</h2>
+  <p>Antes de publicar la página, sustituye los enlaces de carga y álbum por tus enlaces reales de OneDrive.</p>
+  <p><b>1.</b> Crea una carpeta “CUENCADA 2026 / FOTOS Y VIDEOS”.<br>
+  <b>2.</b> Genera una solicitud para cargar archivos (si tu cuenta de Microsoft lo permite).<br>
+  <b>3.</b> Copia el enlace y pégalo en la configuración del sitio, indicada en el código.</p>
+ </div>
+</div>
+
+<script>
+/* ============================================================
+   CONFIGURACIÓN CUENCADA 2026
+   PEGA AQUÍ TUS ENLACES DE ONEDRIVE
+   ============================================================ */
+const ONEDRIVE_UPLOAD_URL = "PEGA_AQUI_EL_ENLACE_DE_SUBIDA_DE_ONEDRIVE";
+const ONEDRIVE_GALLERY_URL = "PEGA_AQUI_EL_ENLACE_DEL_ALBUM_DE_ONEDRIVE";
+
+function setLink(id,url){
+  const el=document.getElementById(id);
+  if(!el)return;
+  if(url && !url.startsWith("PEGA_AQUI")) {
+    el.href=url; el.target="_blank"; el.rel="noopener";
+  } else {
+    el.href="#";
+    el.onclick=(e)=>{e.preventDefault();document.getElementById("modal").classList.add("open");};
+  }
+}
+setLink("uploadBtn",ONEDRIVE_UPLOAD_URL);
+setLink("galleryBtn",ONEDRIVE_GALLERY_URL);
+setLink("uploadTop",ONEDRIVE_UPLOAD_URL);
+
+function closeModal(){document.getElementById("modal").classList.remove("open")}
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+
+/* Cuenta regresiva: inicio de la Cuencada, 13 septiembre 2026 00:00 hora CDMX */
+const target=new Date("2026-09-13T00:00:00-06:00").getTime();
+function countdown(){
+  let d=target-Date.now(); if(d<0)d=0;
+  const days=Math.floor(d/86400000); d%=86400000;
+  const hours=Math.floor(d/3600000); d%=3600000;
+  const mins=Math.floor(d/60000); const secs=Math.floor((d%60000)/1000);
+  document.getElementById("days").textContent=days;
+  document.getElementById("hours").textContent=hours;
+  document.getElementById("mins").textContent=mins;
+  document.getElementById("secs").textContent=secs;
+}
+countdown();setInterval(countdown,1000);
+</script>
+</body>
+</html>
