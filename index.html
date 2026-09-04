@@ -17,8 +17,22 @@ a{text-decoration:none;color:inherit}
 .hero{min-height:92vh;padding:22px 20px 55px;display:flex;flex-direction:column;justify-content:space-between;
 background:linear-gradient(135deg,rgba(7,76,69,.96),rgba(8,127,109,.88)),radial-gradient(circle at 85% 15%,#e7b84b55,transparent 30%)}
 .nav{max-width:1100px;width:100%;margin:auto;display:flex;align-items:center;justify-content:space-between;color:white}
-.logo{font-weight:900;letter-spacing:.12em;font-size:20px}.nav a{margin-left:18px;font-size:14px;font-weight:700}
-.hero-content{max-width:1100px;width:100%;margin:0 auto;color:white;padding:55px 0 15px}
+<!-- .logo{font-weight:900;letter-spacing:.12em;font-size:20px}.nav a{margin-left:18px;font-size:14px;font-weight:700} -->
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+  letter-spacing:.12em;
+  font-size:20px;
+}
+  .logo img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+  display:block;
+}
+  .hero-content{max-width:1100px;width:100%;margin:0 auto;color:white;padding:55px 0 15px}
 .kicker{font-weight:800;letter-spacing:.18em;color:#ffe39a;font-size:14px}
 h1{font-size:clamp(54px,11vw,118px);line-height:.9;margin:14px 0 20px;letter-spacing:-.06em}
 .hero h2{font-size:clamp(20px,3vw,34px);margin:0 0 18px}.hero p{font-size:18px;max-width:700px}
