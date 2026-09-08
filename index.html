@@ -323,17 +323,31 @@ document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="
 /* Cuenta regresiva: inicio de la Cuencada, 13 septiembre 2026 00:00 hora CDMX */
 const target=new Date("2026-09-13T00:00:00-06:00").getTime();
 function countdown(){
-  let d=target-Date.now(); if(d<0)d=0;
-  const days=Math.floor(d/86400000); d%=86400000;
-  const hours=Math.floor(d/3600000); d%=3600000;
-  const mins=Math.floor(d/60000); const secs=Math.floor((d%60000)/1000);
-  document.getElementById("days").textContent=days;
-  document.getElementById("hours").textContent=hours;
-  document.getElementById("mins").textContent=mins;
-  document.getElementById("secs").textContent=secs;
+  let d = target - Date.now();
+  // Cuando llegue el inicio de la Cuencada
+  if(d <= 0){
+    document.querySelector(".countdown").innerHTML = `
+      <div style="grid-column:1/-1; font-size:24px; font-weight:900; padding:20px;">
+        🎉 ¡YA LLEGÓ LA CUENCADA! 🎉
+      </div>
+    `;
+    return;
+  }
+  const days = Math.floor(d / 86400000);
+  d %= 86400000;
+  const hours = Math.floor(d / 3600000);
+  d %= 3600000;
+  const mins = Math.floor(d / 60000);
+  const secs = Math.floor((d % 60000) / 1000);
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = hours;
+  document.getElementById("mins").textContent = mins;
+  document.getElementById("secs").textContent = secs;
 }
-countdown();setInterval(countdown,1000);
+countdown();
+setInterval(countdown, 1000);
 </script>  
+
   <!-- ========================================================= WHATSAPP FLOTANTE ========================================================= -->
   <a href="https://chat.whatsapp.com/IvI6oayIIoEJ8Wn7EWQxO0?s=cl&p=i&mlu=0"class="whatsapp-float"target="_blank" rel="noopener" title="Grupo WhatsApp Cuencada">💬</a>
 </body>
