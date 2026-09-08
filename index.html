@@ -383,15 +383,14 @@ function countdown(){
 }
 countdown();setInterval(countdown,1000);
 
-<!--
 /* =========================================================
 MENSAJES DE LA FAMILIA
 ========================================================= */
-let mensajesJSON = [];
+<!--let mensajesJSON = [];-->
 /* =========================================================
 CARGAR MENSAJES DESDE mensajes.json
 ========================================================= */
-
+<!--
 async function cargarMensajesJSON(){
   try{
     const respuesta =
@@ -411,11 +410,11 @@ async function cargarMensajesJSON(){
     mensajesJSON = [];
   }
   mostrarMensajes();
-}
+}-->
 /* =========================================================
 OBTENER MENSAJES LOCALES
 ========================================================= */
-function obtenerMensajesLocales(){
+<!--function obtenerMensajesLocales(){
   try{
     return JSON.parse(
       localStorage.getItem(
@@ -425,17 +424,17 @@ function obtenerMensajesLocales(){
   }catch(error){
     return [];
   }
-}
+}-->
 /* =========================================================
 OBTENER TODOS LOS MENSAJES
 JSON + LOCALSTORAGE
 ========================================================= */
-function obtenerTodosLosMensajes(){
+<!--function obtenerTodosLosMensajes(){
   return [
     ...mensajesJSON,
     ...obtenerMensajesLocales()
   ];
-}
+}-->
 <!--   
 const STORAGE_KEY =
 "cuencada2026_mensajes";
@@ -456,23 +455,24 @@ ESCAPAR HTML
 Evita que alguien introduzca código
 dentro del mensaje.
 ========================================================= */
-function escaparHTML(texto){
+<!--function escaparHTML(texto){
 const div =
 document.createElement("div");
 div.textContent=texto;
 return div.innerHTML;
-}
+}-->
 /* =========================================================
 MOSTRAR MENSAJES
 ========================================================= */
-function mostrarMensajes(){
+<!--function mostrarMensajes(){
 const container =
 document.getElementById(
 "messagesContainer"
-);
+);-->
 <!-- const mensajes =
 obtenerMensajes();
 -->
+  <!--
 const mensajes =
 obtenerTodosLosMensajes();
 container.innerHTML="";
@@ -503,11 +503,11 @@ mensajes .slice() .reverse() .forEach( (mensaje,index)=>{   const card =     doc
     <strong>      — ${escaparHTML(mensaje.nombre)}    </strong>
     <span class="message-date">      ${fechaTexto} · ${horaTexto}    </span>    ${mensaje.origen === "local" ? 
     <button      class="delete-message"      onclick="eliminarMensaje(${mensajes.length - 1 - index})"    >      🗑️ Eliminar    </button>  `;
-  container.appendChild(    card  );});}
+  container.appendChild(    card  );});} -->
 /* =========================================================
 AGREGAR MENSAJE
 ========================================================= */
-function agregarMensaje(){
+<!--function agregarMensaje(){
 const nombreInput =
 document.getElementById(
 "nombreMensaje"
@@ -539,10 +539,11 @@ alert(
   "El mensaje no puede superar los 500 caracteres."
 );
 return;
-}
+}-->
 <!-- const mensajes =
 obtenerMensajes();
 -->
+  <!--
 const mensajes =
 obtenerMensajesLocales();
 const iconos=[
@@ -585,11 +586,11 @@ behavior:"smooth"
 });
 
 }
-
+-->
 /* =========================================================
 ELIMINAR MENSAJE
 ========================================================= */
-function eliminarMensaje(indice){
+<!--function eliminarMensaje(indice){
 const mensajes =
 obtenerMensajesLocales();
 if(
@@ -611,10 +612,8 @@ const nuevosMensajes =
       nuevosMensajes
     )
   );
-
   mostrarMensajes();
-
-}  
+} -->  
 <!-- mensajes.splice(
 indice,
 1
