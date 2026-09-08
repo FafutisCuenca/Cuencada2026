@@ -382,6 +382,7 @@ function countdown(){
   document.getElementById("secs").textContent=secs;
 }
 countdown();setInterval(countdown,1000);
+
 <!--
 /* =========================================================
 MENSAJES DE LA FAMILIA
@@ -392,77 +393,52 @@ CARGAR MENSAJES DESDE mensajes.json
 ========================================================= */
 
 async function cargarMensajesJSON(){
-
   try{
-
     const respuesta =
       await fetch("mensajes.json");
-
     if(!respuesta.ok){
       throw new Error(
         "No se pudo cargar mensajes.json"
       );
     }
-
     mensajesJSON =
       await respuesta.json();
-
   }catch(error){
-
     console.error(
       "Error cargando mensajes.json:",
       error
     );
-
     mensajesJSON = [];
-
   }
-
   mostrarMensajes();
-
 }
 /* =========================================================
 OBTENER MENSAJES LOCALES
 ========================================================= */
-
 function obtenerMensajesLocales(){
-
   try{
-
     return JSON.parse(
       localStorage.getItem(
         STORAGE_KEY
       )
     ) || [];
-
   }catch(error){
-
     return [];
-
   }
-
 }
-
-
 /* =========================================================
 OBTENER TODOS LOS MENSAJES
 JSON + LOCALSTORAGE
 ========================================================= */
-
 function obtenerTodosLosMensajes(){
-
   return [
     ...mensajesJSON,
     ...obtenerMensajesLocales()
   ];
-
 }
-
-
 <!--   
 const STORAGE_KEY =
 "cuencada2026_mensajes";
-
 function obtenerMensajes(){
 try{
 return JSON.parse(
@@ -475,7 +451,6 @@ return [];
 }
 }
 -->
-  
 /* =========================================================
 ESCAPAR HTML
 Evita que alguien introduzca código
@@ -487,23 +462,19 @@ document.createElement("div");
 div.textContent=texto;
 return div.innerHTML;
 }
-
 /* =========================================================
 MOSTRAR MENSAJES
 ========================================================= */
-
 function mostrarMensajes(){
 const container =
 document.getElementById(
 "messagesContainer"
 );
-
 <!-- const mensajes =
 obtenerMensajes();
 -->
 const mensajes =
 obtenerTodosLosMensajes();
-  
 container.innerHTML="";
 if(mensajes.length===0){
 container.innerHTML=`
@@ -522,117 +493,41 @@ container.innerHTML=`
 `;
 return;
 }
-mensajes
-.slice()
-.reverse()
-.forEach(
-(mensaje,index)=>{
-
-  const card =
-    document.createElement(
-      "article"
-    );
-
-  card.className=
-    "message-card";
-
-  const fecha =
-    new Date(
-      mensaje.fecha
-    );
-
-  const fechaTexto =
-    fecha.toLocaleDateString(
-      "es-MX",
-      {
-        day:"numeric",
-        month:"long",
-        year:"numeric"
-      }
-    );
-
-  const horaTexto =
-    fecha.toLocaleTimeString(
-      "es-MX",
-      {
-        hour:"2-digit",
-        minute:"2-digit"
-      }
-    );
-
-  card.innerHTML=`
-
-    <div class="message-icon">
-      ${mensaje.icono || "❤️"}
-    </div>
-
-    <p>
-      “${escaparHTML(mensaje.texto)}”
-    </p>
-
-    <strong>
-      — ${escaparHTML(mensaje.nombre)}
-    </strong>
-
-    <span class="message-date">
-      ${fechaTexto} · ${horaTexto}
-    </span>
-    ${mensaje.origen === "local" ? 
-    <button
-      class="delete-message"
-      onclick="eliminarMensaje(${mensajes.length - 1 - index})"
-    >
-      🗑️ Eliminar
-    </button>
-
-  `;
-
-  container.appendChild(
-    card
-  );
-
-}
-
-);
-
-}
-
+mensajes .slice() .reverse() .forEach( (mensaje,index)=>{   const card =     document.createElement(      "article"    );
+  card.className="message-card";
+  const fecha =    new Date( mensaje.fecha);
+  const fechaTexto =     fecha.toLocaleDateString(      "es-MX",      {        day:"numeric",        month:"long",        year:"numeric"      }    );
+  const horaTexto =    fecha.toLocaleTimeString(      "es-MX",      {        hour:"2-digit",        minute:"2-digit"      }    );
+  card.innerHTML=`    <div class="message-icon">      ${mensaje.icono || "❤️"}    </div>
+    <p>      “${escaparHTML(mensaje.texto)}”    </p>
+    <strong>      — ${escaparHTML(mensaje.nombre)}    </strong>
+    <span class="message-date">      ${fechaTexto} · ${horaTexto}    </span>    ${mensaje.origen === "local" ? 
+    <button      class="delete-message"      onclick="eliminarMensaje(${mensajes.length - 1 - index})"    >      🗑️ Eliminar    </button>  `;
+  container.appendChild(    card  );});}
 /* =========================================================
 AGREGAR MENSAJE
 ========================================================= */
-
 function agregarMensaje(){
-
 const nombreInput =
 document.getElementById(
 "nombreMensaje"
 );
-
 const textoInput =
 document.getElementById(
 "textoMensaje"
 );
-
 const nombre =
 nombreInput.value.trim();
-
 const texto =
 textoInput.value.trim();
-
 if(!nombre){
-
 alert(
   "Por favor escribe tu nombre."
 );
-
 nombreInput.focus();
-
 return;
-
 }
-
 if(!texto){
-
 alert(
   "Por favor escribe un mensaje."
 );
@@ -650,7 +545,6 @@ obtenerMensajes();
 -->
 const mensajes =
 obtenerMensajesLocales();
- 
 const iconos=[
 "❤️",
 "🥰",
@@ -735,9 +629,7 @@ mostrarMensajes();
 <!-- =========================================================
 INICIALIZAR MENSAJES
 =========================================================
-
 mostrarMensajesJSON();
--->
 -->
 </script>
 
