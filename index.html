@@ -42,6 +42,19 @@ background:linear-gradient(135deg,rgba(7,76,69,.96),rgba(8,127,109,.88)),radial-
   /* Sombra para que resalte */
   box-shadow:0 3px 10px rgba(0,0,0,.25);
 }
+.btn.back-top{
+  border-color:var(--green);
+  color:var(--green);
+  background:white;
+  transition:.3s;
+}
+
+.btn.back-top:hover{
+  background:var(--green);
+  color:white;
+  transform:translateY(-2px);
+}
+  
   .hero-content{max-width:1100px;width:100%;margin:0 auto;color:white;padding:55px 0 15px}
 .kicker{font-weight:800;letter-spacing:.18em;color:#ffe39a;font-size:14px}
 h1{font-size:clamp(54px,11vw,118px);line-height:.9;margin:14px 0 20px;letter-spacing:-.06em}
@@ -78,7 +91,7 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
 }
 .btn.whatsapp{background:#25D366;color:#fff;border:2px solid #25D366;transition:.3s;}
 .btn.whatsapp:hover{background:#1fa855;border-color:#1fa855;transform:translateY(-2px);}
-.programa-box{text-align:center;margin:30px 0 50px;
+.programa-box{text-align:center;margin:30px 0 50px;}
 .programa-img{width:100%;max-width:900px;border-radius:24px;box-shadow:var(--shadow);border:4px solid white;}
 .whatsapp-float{position:fixed;right:20px;bottom:20px;width:65px;height:65px;border-radius:50%;background:#25D366;color:white;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;}
 </style>
@@ -141,6 +154,9 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
  <!--   <source src="https://1drv.ms/u/c/b0c7d5955d4a8581/IQAD_Th6JenOQK44EWB7tR-DAT3Nzn8FaaD9C0zgaV-ck4A" type="audio/mpeg"> -->
     Tu navegador no puede reproducir este audio.
   </audio>
+  <div class="actions" style="justify-content:center">
+  <a class="btn back-top" href="#inicio">↑ Volver al inicio</a>
+</div>
 </section>
 <section id="programa">
   <h2 class="section-title">📅 Programa Cuencada 2026</h2>
@@ -167,11 +183,9 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
     <article class="day"><div class="date">18<span>Viernes</span></div><div><h3>❤️ Despedida</h3><p>Tiempo libre para quienes permanezcan más tiempo en Mérida.</p></div></article>
   </div>
 </div>
-  <div class="actions" style="justify-content:center; margin-top:30px;">
-    <a class="btn ghost" href="#inicio">
-      ↑ Volver al inicio
-    </a>
-  </div>
+<div class="actions" style="justify-content:center">
+  <a class="btn back-top" href="#inicio">↑ Volver al inicio</a>
+</div>
 </section>
 
 <section id="fotos">
@@ -190,11 +204,9 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
   <!-- <div class="gallery">
     <div class="photo">📸</div><div class="photo">🌴</div><div class="photo">💦</div><div class="photo">🇲🇽</div>
   </div> -->
-  <div class="actions" style="justify-content:center; margin-top:30px;">
-    <a class="btn ghost" href="#inicio">
-      ↑ Volver al inicio
-    </a>
-  </div>
+<div class="actions" style="justify-content:center">
+  <a class="btn back-top" href="#inicio">↑ Volver al inicio</a>
+</div>
 </section>
 
 <section id="mapa">
@@ -207,7 +219,9 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
     <div class="mapcard"><h3>🌴 Uxmal</h3><p>Visita del martes 15.</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Uxmal+Yucatan">Abrir en Google Maps →</a></div>
     <div class="mapcard"><h3>🌊 Progreso</h3><p>Malecón y atardecer del miércoles 16.</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Progreso+Yucatan">Abrir en Google Maps →</a></div>
   </div>
-    <div class="actions" style="justify-content:center"><a class="btn ghost" href="#inicio">↑ Volver arriba</a></div>
+<div class="actions" style="justify-content:center">
+  <a class="btn back-top" href="#inicio">↑ Volver al inicio</a>
+</div>
 </section>
 
 <section id="familia">
@@ -218,7 +232,9 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
     <div class="card"><div class="icon">📜</div><h3>Nuestra historia</h3><p>Relatos y documentos que ayuden a preservar nuestra memoria.</p></div>
     <div class="card"><div class="icon">🖼️</div><h3>Fotos antiguas</h3><p>Un álbum especial para las imágenes de nuestros padres y abuelos.</p></div>
   </div>
-  <div class="actions" style="justify-content:center"><a class="btn ghost" href="#inicio">↑ Volver arriba</a></div>
+  <div class="actions" style="justify-content:center">
+    <a class="btn back-top" href="#inicio">↑ Volver al inicio</a>
+  </div>
 </section>
 
 <section id="extras">
@@ -228,7 +244,9 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
     <div class="card"><h3>🍴 Gastronomía</h3><p>Descubre cochinita, sopa de lima, papadzules y otras especialidades yucatecas.</p></div>
     <div class="card"><h3>🛍️ Compras</h3><p>Artesanías, textiles, recuerdos y productos locales.</p></div>
   </div>
- <div class="actions" style="justify-content:center"><a class="btn ghost" href="#inicio">↑ Volver arriba</a></div>
+<div class="actions" style="justify-content:center">
+  <a class="btn back-top" href="#inicio">↑ Volver al inicio</a>
+</div>
 </section>
 
 <section id="tips">
@@ -238,7 +256,9 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
     <div class="card"><h3>💦 Para cenotes y playa</h3><p>Traje de baño y una toalla pequeña.</p></div>
     <div class="card"><h3>👟 Para caminar</h3><p>Calzado cómodo para Mérida, Izamal y las visitas arqueológicas.</p></div>
   </div>
- <div class="actions" style="justify-content:center"><a class="btn ghost" href="#inicio">↑ Volver arriba</a></div>
+ <div class="actions" style="justify-content:center">
+  <a class="btn back-top" href="#inicio">↑ Volver al inicio</a>
+</div>
 </section>
 
 <section>
