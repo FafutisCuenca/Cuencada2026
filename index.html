@@ -135,10 +135,48 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
 
 <section>
 <h2 class="section-title">Mensaje del día</h2>
-    <!-- UBICACIÓN CORRECTA: Justo debajo de la cuenta regresiva -->
-    <div id="mensajeEspecial" style="display:none; margin-top:30px; padding:15px 20px; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); border-radius:18px; max-width:600px;">
-      <p style="font-size:18px; font-weight:bold; margin:0; color:#ffe39a; text-align:center;"></p>
+      <div id="mensajeEspecial">
+        <p></p>
     </div>
+    <!-- UBICACIÓN CORRECTA: Justo debajo de la cuenta regresiva -->
+    <!-- <div id="mensajeEspecial" style="display:none; margin-top:30px; padding:15px 20px; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); border-radius:18px; max-width:600px;">
+      <p style="font-size:18px; font-weight:bold; margin:0; color:#ffe39a; text-align:center;"></p>
+    </div>-->
+<style>
+/* Estilo general del section */
+.mensaje-dia {
+    position: relative;       /* Evita que herede position:absolute */
+    float: none;               /* Elimina flotado */
+    width: 100%;               /* Ocupa todo el ancho */
+    margin: 20px auto 0 auto;  /* Centrado horizontal */
+    text-align: center;        /* Centra el contenido */
+}
+
+/* Estilo del título */
+.mensaje-dia .section-title {
+    margin-bottom: 15px;
+}
+
+/* Caja del mensaje */
+#mensajeEspecial {
+    display: none; /* Oculto por defecto */
+    margin: 30px auto 0 auto;
+    padding: 15px 20px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 18px;
+    max-width: 600px;
+}
+
+#mensajeEspecial p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: #ffe39a;
+    text-align: center;
+}
+</style>
+  
     <div class="actions" style="justify-content:center">
       <a class="btn back-top" href="#inicio">↑ Volver al inicio</a>
     </div>
