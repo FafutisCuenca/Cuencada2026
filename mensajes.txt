@@ -7,10 +7,3 @@
 2026-09-17|🎯 Día 5 del evento: aprovecha cada instante, ya casi termina.
 2026-09-18|🏆 Último día del evento: gracias por ser parte de esta gran experiencia CUENCADA 2026.
 2026-09-19|💖 Gracias por acompañarnos. ¡Nos vemos en la próxima edición de nuestra tradicional CUENCADA! Nos vamos a extrañar todos.
-/* Cómo usarlo
-Guarda este contenido en un archivo llamado mensajes.txt en la misma carpeta que tu index.html.
-El script que ya te pasé buscará la fecha actual y mostrará el mensaje correspondiente.
-No tendrás que tocar nada más: el sistema se encargará de mostrar el mensaje correcto cada día.
-💡 Si quieres, en el siguiente paso puedo hacer que este mismo mensaje del día se use también para el botón secreto de WhatsApp, así todo queda sincronizado y automático.
-¿Quieres que lo prepare ya con esa integración? */
-
