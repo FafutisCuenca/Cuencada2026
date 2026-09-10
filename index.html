@@ -129,9 +129,43 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
       <div><b id="days">—</b><span>días</span></div><div><b id="hours">—</b><span>horas</span></div>
       <div><b id="mins">—</b><span>minutos</span></div><div><b id="secs">—</b><span>segundos</span></div>
     </div>
+    <div id="mensajeEspecial" style="display:none; text-align:center; margin-top:20px;">
+      <p style="font-size:1.5em; font-weight:bold; color:#333;"></p>
+    </div>
   </div>
 </header>
 
+<script>
+  // Si el archivo está en el mismo repositorio y carpeta que el HTML
+  const urlMensajes = "mensajes.txt";
+
+  function mostrarMensaje(frase) {
+    const contenedor = document.getElementById("mensajeEspecial");
+    contenedor.style.display = "block";
+    contenedor.querySelector("p").textContent = frase;
+  }
+
+  fetch(urlMensajes)
+    .then(response => response.text())
+    .then(texto => {
+      const hoy = new Date();
+      const fechaHoy = hoy.toISOString().split("T")[0]; // AAAA-MM-DD
+      const lineas = texto.split("\n");
+      let mensajeHoy = null;
+      for (let linea of lineas) {
+        const [fecha, mensaje] = linea.split("|");
+        if (fecha === fechaHoy) {
+          mensajeHoy = mensaje;
+          break;
+        }
+      }
+      if (mensajeHoy) {
+        mostrarMensaje(mensajeHoy);
+      }
+    })
+    .catch(err => console.error("Error al cargar mensajes:", err));
+</script>
+  
 <section>
   <h2 class="section-title">Todo en un solo lugar</h2>
   <p class="intro">La página está pensada primero para celular: durante la Cuencada podrás consultar rápidamente qué sigue, llegar a cada lugar y compartir tus fotografías y videos.</p>
