@@ -133,18 +133,21 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
   </div>
 </header>
 
+  <section>
+<script>
+  document.getElementById("mensajeEspecial").style.display = "block";
+  document.querySelector("#mensajeEspecial p").textContent = "✅ Esto es una prueba directa";
+</script>
+  
 <script>
   <h2 class="section-title">Mensaje del día</h2>
   // Si el archivo está en el mismo repositorio y carpeta que el HTML
-
   const urlMensajes = "mensajes.txt";
-
   function mostrarMensaje(frase) {
     const contenedor = document.getElementById("mensajeEspecial");
     contenedor.style.display = "block";
     contenedor.querySelector("p").textContent = frase;
   }
-
   fetch(urlMensajes)
     .then(response => response.text())
     .then(texto => {
@@ -165,6 +168,7 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
     })
     .catch(err => console.error("Error al cargar mensajes:", err));
 </script>
+</section>
   
 <section>
   <h2 class="section-title">Todo en un solo lugar</h2>
