@@ -130,6 +130,12 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
       <div><b id="days">—</b><span>días</span></div><div><b id="hours">—</b><span>horas</span></div>
       <div><b id="mins">—</b><span>minutos</span></div><div><b id="secs">—</b><span>segundos</span></div>
     </div>
+
+    <!-- UBICACIÓN CORRECTA: Justo debajo de la cuenta regresiva -->
+    <div id="mensajeEspecial" style="display:none; margin-top:30px; padding:15px 20px; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); border-radius:18px; max-width:600px;">
+      <p style="font-size:18px; font-weight:bold; margin:0; color:#ffe39a; text-align:center;"></p>
+    </div>
+    
   </div>
 </header>
 
@@ -138,51 +144,10 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
 
 <!-- Contenedor oculto inicialmente -->
 <!--  <div id="mensajeEspecial" style="display: none;"> <p></p> </div> -->  
-<div id="mensajeEspecial" style="display:none; text-align:center;">
+<!-- <div id="mensajeEspecial" style="display:none; text-align:center;">
   <p style="font-size:1.5em; font-weight:bold; color:#333;"></p>
-</div>
-  
-<script defer>
-  // Si el archivo está en el mismo repositorio y carpeta que el HTML
-  const urlMensajes = "mensajes.txt";
-  
-  function mostrarMensaje(frase) {
-    const contenedor = document.getElementById("mensajeEspecial");
-    contenedor.style.display = "block";
-    contenedor.querySelector("p").textContent = frase;
-  }
-  
-  // Agregamos un parámetro de tiempo (?t=) para evitar que GitHub guarde el archivo en caché
-  fetch(`${urlMensajes}?t=${new Date().getTime()}`)
-    .then(response => response.text())
-    .then(texto => {
-      const hoy = new Date();
-      // Corrección de Zona Horaria: Obtiene la fecha del dispositivo del usuario
-      const año = hoy.getFullYear();
-      const mes = String(hoy.getMonth() + 1).padStart(2, '0');
-      const dia = String(hoy.getDate()).padStart(2, '0');
-      const fechaHoy = `${año}-${mes}-${dia}`; // Genera exactamente "2026-09-10"
-
-      // Divide por cualquier tipo de salto de línea (\n o \r\n de Windows)
-      const lineas = texto.split(/\r?\n/);
-      let mensajeHoy = null;
-      
-      for (let linea of lineas) {
-        if (linea.includes("|")) {
-          const [fecha, mensaje] = linea.split("|");
-          // .trim() elimina espacios en blanco o quiebres ocultos
-          if (fecha.trim() === fechaHoy) {
-            mensajeHoy = mensaje.trim();
-            break;
-          }
-        }
-      }
-      if (mensajeHoy) {
-        mostrarMensaje(mensajeHoy);
-      }
-    })
-    .catch(err => console.error("Error al cargar mensajes:", err));
-</script>
+</div> -->
+ 
 </section>
   
 <section>
@@ -400,6 +365,47 @@ function countdown(){
 countdown();
 setInterval(countdown, 1000);
 </script>  
+<script defer>
+  // Si el archivo está en el mismo repositorio y carpeta que el HTML
+  const urlMensajes = "mensajes.txt";
+  
+  function mostrarMensaje(frase) {
+    const contenedor = document.getElementById("mensajeEspecial");
+    contenedor.style.display = "block";
+    contenedor.querySelector("p").textContent = frase;
+  }
+  
+  // Agregamos un parámetro de tiempo (?t=) para evitar que GitHub guarde el archivo en caché
+  fetch(`${urlMensajes}?t=${new Date().getTime()}`)
+    .then(response => response.text())
+    .then(texto => {
+      const hoy = new Date();
+      // Corrección de Zona Horaria: Obtiene la fecha del dispositivo del usuario
+      const año = hoy.getFullYear();
+      const mes = String(hoy.getMonth() + 1).padStart(2, '0');
+      const dia = String(hoy.getDate()).padStart(2, '0');
+      const fechaHoy = `${año}-${mes}-${dia}`; // Genera exactamente "2026-09-10"
+
+      // Divide por cualquier tipo de salto de línea (\n o \r\n de Windows)
+      const lineas = texto.split(/\r?\n/);
+      let mensajeHoy = null;
+      
+      for (let linea of lineas) {
+        if (linea.includes("|")) {
+          const [fecha, mensaje] = linea.split("|");
+          // .trim() elimina espacios en blanco o quiebres ocultos
+          if (fecha.trim() === fechaHoy) {
+            mensajeHoy = mensaje.trim();
+            break;
+          }
+        }
+      }
+      if (mensajeHoy) {
+        mostrarMensaje(mensajeHoy);
+      }
+    })
+    .catch(err => console.error("Error al cargar mensajes:", err));
+</script>
 
   <!-- ========================================================= WHATSAPP FLOTANTE ========================================================= -->
   <a href="https://chat.whatsapp.com/IvI6oayIIoEJ8Wn7EWQxO0?s=cl&p=i&mlu=0"class="whatsapp-float"target="_blank" rel="noopener" title="Grupo WhatsApp Cuencada">💬</a>
