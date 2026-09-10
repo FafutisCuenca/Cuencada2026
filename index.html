@@ -103,6 +103,7 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
   <nav class="nav">
     <div class="logo img"><img src="images/Logo_Cuencada2026.jpg" >CUENCADA 2026</div>
     <div><a href="#programa">Programa</a><a href="#fotos">Fotos</a><a href="#mapa">Mapa</a><a href="#familia">Familia</a></div>
+    <div id="mensajeEspecial" style="display:none; text-align:center; margin-top:20px;"><p style="font-size:1.5em; font-weight:bold; color:#333;"></p></div>
   </nav>
   <div class="hero-content">
     <div class="kicker">MÉRIDA · YUCATÁN · 13—18 SEPTIEMBRE 2026</div>
@@ -135,9 +136,7 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
 <script>
   <h2 class="section-title">Mensaje del día</h2>
   // Si el archivo está en el mismo repositorio y carpeta que el HTML
-  <div id="mensajeEspecial" style="display:none; text-align:center; margin-top:20px;">
-    <p style="font-size:1.5em; font-weight:bold; color:#333;"></p>
-  </div>
+
   const urlMensajes = "mensajes.txt";
 
   function mostrarMensaje(frase) {
