@@ -135,10 +135,7 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
 
 <section>
 <h2 class="section-title">Mensaje del día</h2>
-<!-- <script>
-  document.getElementById("mensajeEspecial").style.display = "block";
-  document.querySelector("#mensajeEspecial p").textContent = "✅ Esto es una prueba directa";
-</script> -->
+
 <!-- Contenedor oculto inicialmente -->
   <div id="mensajeEspecial" style="display: none;">
     <p></p>
@@ -146,23 +143,36 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
 <script>
   // Si el archivo está en el mismo repositorio y carpeta que el HTML
   const urlMensajes = "mensajes.txt";
+  
   function mostrarMensaje(frase) {
     const contenedor = document.getElementById("mensajeEspecial");
     contenedor.style.display = "block";
     contenedor.querySelector("p").textContent = frase;
   }
-  fetch(urlMensajes)
+  
+  // Agregamos un parámetro de tiempo (?t=) para evitar que GitHub guarde el archivo en caché
+  fetch(`${urlMensajes}?t=${new Date().getTime()}`)
     .then(response => response.text())
     .then(texto => {
       const hoy = new Date();
-      const fechaHoy = hoy.toISOString().split("T")[0]; // AAAA-MM-DD
-      const lineas = texto.split("\n");
+      // Corrección de Zona Horaria: Obtiene la fecha del dispositivo del usuario
+      const año = hoy.getFullYear();
+      const mes = String(hoy.getMonth() + 1).padStart(2, '0');
+      const dia = String(hoy.getDate()).padStart(2, '0');
+      const fechaHoy = `${año}-${mes}-${dia}`; // Genera exactamente "2026-09-10"
+
+      // Divide por cualquier tipo de salto de línea (\n o \r\n de Windows)
+      const lineas = texto.split(/\r?\n/);
       let mensajeHoy = null;
+      
       for (let linea of lineas) {
-        const [fecha, mensaje] = linea.split("|");
-        if (fecha === fechaHoy) {
-          mensajeHoy = mensaje;
-          break;
+        if (linea.includes("|")) {
+          const [fecha, mensaje] = linea.split("|");
+          // .trim() elimina espacios en blanco o quiebres ocultos
+          if (fecha.trim() === fechaHoy) {
+            mensajeHoy = mensaje.trim();
+            break;
+          }
         }
       }
       if (mensajeHoy) {
