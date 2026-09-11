@@ -94,6 +94,17 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
 .programa-box{text-align:center;margin:30px 0 50px;}
 .programa-img{width:100%;max-width:900px;border-radius:24px;box-shadow:var(--shadow);border:4px solid white;}
 .whatsapp-float{position:fixed;right:20px;bottom:20px;width:65px;height:65px;border-radius:50%;background:#25D366;color:white;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:9999;}
+
+/* ============================================================
+   MOSAICO DE FOTOS CUENCADA
+   ============================================================ */
+.mosaico-fotos{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:25px;}
+.mosaico-foto{aspect-ratio:1/1;overflow:hidden;border-radius:14px;background:#e7eee9;box-shadow:0 5px 15px rgba(19,55,49,.10);}
+.mosaico-foto img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;user-select:none;}
+/* En celular */
+@media(max-width:760px){
+.mosaico-fotos{grid-template-columns:repeat(2,1fr);gap:8px;  }
+.mosaico-foto{border-radius:12px;}}  
 </style>
 </head>
 
@@ -258,6 +269,57 @@ footer{background:#153c36;color:white;text-align:center;padding:40px 20px}.small
     <div>
       <div class="card" style="color:var(--ink);"><b>💡 Consejo</b><p style="margin-top:7px">Nuestro repositorio, tiene carpetas por día para que ahi subas tus fotos y videos: 13, 14, 15, 16, 17 y 18 de septiembre.</p></div></div>
     </div>
+<h3 style="margin:30px 0 5px; font-size:24px;">
+  📸 Últimos momentos
+</h3>
+
+<p class="small" style="color:var(--muted); margin-top:0;">
+  Una pequeña muestra de las fotografías de la Cuencada.
+</p>
+
+<div class="mosaico-fotos">
+
+  <div class="mosaico-foto">
+    <img src="images/fotos/foto01.jpg" alt="Cuencada 2026">
+  </div>
+
+  <div class="mosaico-foto">
+    <img src="images/fotos/foto02.jpg" alt="Cuencada 2026">
+  </div>
+
+  <div class="mosaico-foto">
+    <img src="images/fotos/foto03.jpg" alt="Cuencada 2026">
+  </div>
+
+  <div class="mosaico-foto">
+    <img src="images/fotos/foto04.jpg" alt="Cuencada 2026">
+  </div>
+
+  <div class="mosaico-foto">
+    <img src="images/fotos/foto05.jpg" alt="Cuencada 2026">
+  </div>
+
+  <div class="mosaico-foto">
+    <img src="images/fotos/foto06.jpg" alt="Cuencada 2026">
+  </div>
+
+  <div class="mosaico-foto">
+    <img src="images/fotos/foto07.jpg" alt="Cuencada 2026">
+  </div>
+
+  <div class="mosaico-foto">
+    <img src="images/fotos/foto08.jpg" alt="Cuencada 2026">
+  </div>
+
+  <div class="mosaico-foto">
+    <img src="images/fotos/foto09.jpg" alt="Cuencada 2026">
+  </div>
+
+  <div class="mosaico-foto">
+    <img src="images/fotos/foto10.jpg" alt="Cuencada 2026">
+  </div>
+
+</div>
   <!-- <div class="gallery">
     <div class="photo">📸</div><div class="photo">🌴</div><div class="photo">💦</div><div class="photo">🇲🇽</div>
   </div> -->
